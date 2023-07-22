@@ -1,0 +1,15 @@
+function calculateArea(length, width) {
+  // Check if the provided parameters are valid numbers
+  if (typeof length !== 'number' || typeof width !== 'number') {
+    throw new Error('Both length and width must be numbers.');
+  }
+
+  // Calculate the area of the rectangle
+  const area = length * width;
+
+  return area;
+}
+const length = 5;
+const width = 10;
+const area = calculateArea(length, width);
+console.log(area); // Output: 50
