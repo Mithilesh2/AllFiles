@@ -1,0 +1,41 @@
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
+
+  const handleToggle = () => {
+    // Generate a random hexadecimal color code
+    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    setBackgroundColor(randomColor);
+  };
+
+  return (
+    <div className="App" style={{ backgroundColor }}>
+      <header className="App-header">
+        <h1>Background Toggle App</h1>
+        <button onClick={handleToggle}>Toggle Background</button>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-header {
+  padding: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
